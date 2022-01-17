@@ -1,7 +1,7 @@
-import { 
+import {
   screen,
   waitFor,
-  waitForElementToBeRemoved 
+  waitForElementToBeRemoved
 } from '@testing-library/react';
 
 import * as userAPI from '../services/userAPI';
@@ -27,7 +27,7 @@ describe('3 - Crie um componente de cabeçalho', () => {
         { timeout: 3000 }
       );
 
-      expect(screen.getByTestId("header-component")).toBeInTheDocument();  
+      expect(screen.getByTestId("header-component")).toBeInTheDocument();
     });
 
   it('Será validado se o componente Header é renderizado na página /album/:id',
@@ -42,18 +42,18 @@ describe('3 - Crie um componente de cabeçalho', () => {
         { timeout: 3000 }
       );
 
-      expect(screen.getByTestId("header-component")).toBeInTheDocument();  
-    });   
-    
+      expect(screen.getByTestId("header-component")).toBeInTheDocument();
+    });
+
   it('Será validado se o componente Header é renderizado na página /favorites',
     async () => {
       renderPath("/favorites");
-  
+
       await waitFor(
         () => expect(screen.queryAllByText('Carregando...')).toHaveLength(0),
         { timeout: 3000 }
       );
-  
+
       expect(screen.getByTestId("header-component")).toBeInTheDocument();
     });
 
@@ -100,7 +100,7 @@ describe('3 - Crie um componente de cabeçalho', () => {
       renderPath("/search");
 
       expect(screen.getByText('Carregando...')).toBeInTheDocument();
-      
+
       await waitForElementToBeRemoved(
         () => screen.getAllByText('Carregando...'),
         { timeout: 3000 },
@@ -123,5 +123,5 @@ describe('3 - Crie um componente de cabeçalho', () => {
 
       expect(headerUserName.textContent).toContain('User Test');
     });
-    
+
 });
