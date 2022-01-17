@@ -1,6 +1,6 @@
 import { screen,
-  waitFor, 
-  waitForElementToBeRemoved 
+  waitFor,
+  waitForElementToBeRemoved
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -21,7 +21,7 @@ describe('2 - Crie um formulário para identificação', () => {
         () => expect(screen.queryAllByText('Carregando...')).toHaveLength(0),
         { timeout: 3000 }
       );
-        
+
       expect(screen.getByTestId('login-name-input')).toBeInTheDocument();
       expect(screen.getByTestId('login-submit-button')).toBeInTheDocument();
     });
@@ -38,11 +38,11 @@ describe('2 - Crie um formulário para identificação', () => {
       const loginNameInput = screen.getByTestId('login-name-input');
       expect(loginNameInput).toBeInTheDocument();
       expect(loginNameInput.value).toBe('');
-      
+
       const loginSubmitButton = screen.getByTestId('login-submit-button');
       expect(loginSubmitButton).toBeInTheDocument();
       expect(loginSubmitButton).toBeDisabled();
-      
+
       userEvent.type(loginNameInput, 'N');
       expect(loginNameInput.value).toBe('N');
       expect(loginSubmitButton).toBeDisabled();
@@ -87,13 +87,13 @@ describe('2 - Crie um formulário para identificação', () => {
         () => expect(screen.queryAllByText('Carregando...')).toHaveLength(0),
         { timeout: 3000 }
       );
-  
+
       userEvent.type(screen.getByTestId('login-name-input'), 'Name');
       userEvent.click(screen.getByTestId('login-submit-button'));
-  
+
       const loadingElement = screen.getByText('Carregando...');
       expect(loadingElement).toBeInTheDocument();
-  
+
       await waitForElementToBeRemoved(
         () => screen.getAllByText('Carregando...'),
         { timeout: 3500 },
