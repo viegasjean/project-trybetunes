@@ -11,7 +11,7 @@ describe('5 - Crie o formulário para pesquisar artistas', () => {
   });
 
   afterEach(() => localStorage.clear());
-  
+
   it('Será validado se ao navegar para a rota /search, o input e o botão estão presentes na tela',
     async () => {
       renderPath("/search");

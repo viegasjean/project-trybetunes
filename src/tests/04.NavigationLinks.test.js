@@ -1,4 +1,4 @@
-import { 
+import {
   screen,
   waitFor
 } from '@testing-library/react';
@@ -70,7 +70,7 @@ describe('4 - Crie os links de navegação no cabeçalho', () => {
 
       expect(window.location.pathname).toBe('/profile');
     });
-    
+
   // Album page
   it('Será validado se os links de navegação são exibidos na página do álbum',
     async () => {
@@ -260,7 +260,7 @@ describe('4 - Crie os links de navegação no cabeçalho', () => {
       expect(window.location.pathname).toBe('/favorites');
     });
 
-  // Edit profile page  
+  // Edit profile page
   it('Será validado se os links de navegação são exibidos na página de edição do perfil',
     async () => {
       renderPath("/profile/edit");
