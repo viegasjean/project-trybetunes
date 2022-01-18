@@ -8,7 +8,7 @@ import './Search.css';
 export default class Search extends React.Component {
   constructor() {
     super();
-    this.handleSerch = this.handleSerch.bind(this);
+    this.handleSerch = this.handleSearch.bind(this);
     this.state = {
       search: '',
       artistName: '',
@@ -18,7 +18,7 @@ export default class Search extends React.Component {
     };
   }
 
-  async handleSerch(evt) {
+  async handleSearch(evt) {
     evt.preventDefault();
     const { search } = this.state;
     this.setState({ isLoading: true });
