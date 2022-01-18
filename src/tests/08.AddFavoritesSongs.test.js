@@ -39,7 +39,7 @@ describe('8 - Crie o mecanismo para adicionar músicas na lista de músicas favo
       jest.spyOn(musicsAPI, 'default').mockImplementation(
         () => Promise.resolve(musicAPIDefaultResponse),
       );
-      
+
       const spy = jest.spyOn(favoriteSongsAPI, 'addSong');
 
       renderPath("/album/123");
@@ -64,7 +64,7 @@ describe('8 - Crie o mecanismo para adicionar músicas na lista de músicas favo
       jest.spyOn(musicsAPI, 'default').mockImplementation(
         () => Promise.resolve(musicAPIDefaultResponse),
       );
-      
+
       renderPath("/album/123");
 
       await waitFor(
@@ -88,7 +88,7 @@ describe('8 - Crie o mecanismo para adicionar músicas na lista de músicas favo
       jest.spyOn(musicsAPI, 'default').mockImplementation(
         () => Promise.resolve(musicAPIDefaultResponse),
       );
-      
+
 
       renderPath("/album/123");
 
