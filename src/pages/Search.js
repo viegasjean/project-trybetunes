@@ -57,7 +57,7 @@ export default class Search extends React.Component {
         { isLoading && <Loading /> }
         { loaded ? (<h1>{`Resultado de álbuns de: ${artistName}`}</h1>
         ) : (<h1>Nenhum álbum foi encontrado</h1>)}
-        <section id="albuns">
+        <section className="albuns">
           {
             albuns.map((album) => (
               <Link
