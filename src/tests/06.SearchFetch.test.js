@@ -10,7 +10,7 @@ describe('6 - Faça a requisição para pesquisar artistas', () => {
     jest.restoreAllMocks();
     localStorage.setItem('user', JSON.stringify(defaultUser));
   });
-  
+
   afterEach(() => localStorage.clear());
 
   it('Será validado se ao clicar em pesquisar, a requisição é feita usando a searchAlbumsAPI',

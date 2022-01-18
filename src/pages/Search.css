@@ -1,0 +1,11 @@
+#albuns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#albuns a {
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+  margin: 10px;
+}
